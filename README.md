@@ -1,38 +1,23 @@
-# The-Movie-Cinema
+# Movie Recommendation Website
+Công nghệ sử : python, flask, html, css, js, TMDB
 
-![Python](https://img.shields.io/badge/Python-3.8-blueviolet)
-![Framework](https://img.shields.io/badge/Framework-Flask-red)
-![Frontend](https://img.shields.io/badge/Frontend-HTML/CSS/JS-green)
-![API](https://img.shields.io/badge/API-TMDB-fcba03)
+Ứng dụng này cung cấp tất cả thông tin chi tiết về bộ phim được yêu cầu như tổng quan, thể loại, ngày phát hành, xếp hạng, thời gian chạy, dàn diễn viên hàng đầu, bài đánh giá, phim được đề xuất, v.v.
 
-This application provides all the details of the requested movie such as overview, genre, release date, rating, runtime, top cast, reviews, recommended movies, etc.
+Thông tin chi tiết về phim (tiêu đề, thể loại, thời gian chạy, xếp hạng, áp phích, v.v.) được TMDB tìm nạp bằng API, https://www.themoviedb.org/documentation/api và sử dụng id IMDB của phim trong API, tôi đã quét web để lấy các đánh giá do người dùng đưa ra trên trang IMDB bằng cách sử dụng `beautifulsoup4` và thực hiện phân tích cảm tính về các đánh giá đó.
 
-The details of the movies(title, genre, runtime, rating, poster, etc) are fetched using an API by TMDB, https://www.themoviedb.org/documentation/api, and using the IMDB id of the movie in the API, I did web scraping to get the reviews given by the user in the IMDB site using `beautifulsoup4` and performed sentiment analysis on those reviews.
+## Lấy API key
 
-## Link to the application
+Tạo một tài khoản tại https://www.themoviedb.org/, nhấp vào liên kết `API` từ thanh bên trái trong cài đặt tài khoản của bạn và điền tất cả thông tin chi tiết để đăng ký khóa API. Nếu bạn được hỏi URL trang web, chỉ cần cung cấp "NA" nếu bạn không có. Bạn sẽ thấy khóa API trong thanh bên `API` sau khi yêu cầu của bạn được chấp thuận.
 
-Check out the live demo: https://tmc.kishanlal.dev/
+## Cách chạy
 
-If you can't find the movie you're searching for through auto-suggestions while typing, there's no need to worry. Simply type the name of the movie and press "enter". Even if you make some typos, it should still work fine.
+1.  Clone repo về máy
+2.  Cài đặt các thư viện cần thiết bằng lệnh:`pip install -r require. txt`
+3.  Thay thế YOUR_API_KEY tại dòng số. 2 của tệp `static/recommend.js`
+4.  Chạy file main.py
+5.  Truy cập địa chỉ `http://127.0.0.1:5000/` 
 
-## 'Invalid Request' Error
-
-If you're getting invalid request error in your application, kindly go through this issue - https://github.com/kishan0725/The-Movie-Cinema/issues/2
-
-## How to get the API key?
-
-Create an account in https://www.themoviedb.org/, click on the `API` link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your `API` sidebar once your request is approved.
-
-## How to run the project?
-
-1. Clone this repository in your local system.
-2. Install all the libraries mentioned in the [requirements.txt](https://github.com/kishan0725/The-Movie-Cinema/blob/master/requirements.txt) file with the command `pip install -r requirements.txt`.
-3. Replace YOUR_API_KEY at line no. 2 of `static/recommend.js` file.
-4. Open your terminal/command prompt from your project directory and run the `main.py` file by executing the command `python main.py`.
-5. Go to your browser and type `http://127.0.0.1:5000/` in the address bar.
-6. Hurray! That's it.
-
-### Sources of the datasets 
+### Datasets 
 
 1. [IMDB 5000 Movie Dataset](https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset)
 2. [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset)
